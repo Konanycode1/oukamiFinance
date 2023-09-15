@@ -3,12 +3,14 @@
 }
 #root {
   max-width: 1140px;
-  max-height: auto;
+  /* max-height: auto; */
   margin: 0 auto;
   padding: 2rem;
   background-color: black;
+  height: 100vh; 
   /* text-align: center; */
 }
+
 p,a{
   color: white;
 }
