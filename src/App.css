@@ -11,7 +11,7 @@
   /* text-align: center; */
 }
 
-p,a{
+p,a, h3{
   color: white;
 }
 
@@ -58,25 +58,194 @@ li:hover{
   align-items: center;
   background-color: black;
 }
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main{
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.sliced{
+  width: 100%;
+  height: 70vh;
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  background-color: #f5ed5656;
+  background-blend-mode: soft-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.agence{
+  width: 25rem;
+  font-size: 2rem;
+}
+.ouk-titre{
+  width: 10rem;
+  line-height: .2rem;
+  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.ouk-titre h3{
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+}
+.ouk-titre p{
+  color: var(--colorPag);
+  text-align: center;
+  font-size: 1.8rem;
+}
+.ouk-absolute{
+  width: 30rem;
+  padding: .8rem;
+  background-color: var(--colorPag);
+  position: absolute;
+  top: 25rem;
+  left: 20rem;
+  color: black;
+  font-weight: bold;
+}
+.btnComm{
+  width: 10rem;
+  height: 2.5rem;
+  float: right;
+  margin-top: 20px;
+  border: none;
+  background-color: var(--colorPag);
+}
+.Ouk-offre{
+  width: 100%;
+  display: flex;
+  margin-top: 70px;
+  justify-content: space-around;
+  align-items: center;
+}
+.oukOffre1{
+  width: 25rem;
+}
+.oukOffre1 h3{
+ color: white; width: 25rem;
+}
+.oukOffre2{
+  width: calc(100%-25rem);
+ text-align: center;
+}
+.oukOffre2 h5{
+  color: white;
+}
+.oukCardGroup{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.bail{
+  margin-top: 20px;
+  width: 10rem;
+  height: 5rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: .5rem solid var(--colorPag);
+}
+.oukCom1 p{
+  color: black;
+}
+.oukCom1{
+  width: 20rem;
+  height: auto;
+  background-color: white;
+  text-align: center;
+  padding: 2rem;
+}
+.oukCom1 h5{
+  width: 10rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--colorPag);
+  margin: 0 auto;
+}
+.oukCom1 p{
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+.rondBull{
+  display: block;
+  text-align: center;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  width:20px;
+  height: 20px;
+  background-color: var(--colorPag);
+  border-radius: 100%;
+  margin-right: 20px;
+}
+@media screen and (max-width:1000px){
+  #root {
+    width:100%;
+    /* max-height: auto; */
+    /* margin: 0 auto; */
+    /* padding: 2rem; */
+    background-color: black;
+    height: 100vh; 
+    /* text-align: center; */
+
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  .sti{
+    width: 20rem;
+    height: 20rem;
+  }
+  .sliced{
+    width: 100%;
+    height: 80vh;
+    display: block;
+    text-align: center;
+  }
+  
+  .ouk-info{
+    width: 100%;
+    display: inline-block;
+   
+  }
+  .agence{
+    width: 100%;
+    font-size:3.5rem;
+  }
+  .ouk-titre{
+    width: 100%;
+    line-height: .2rem;
+    
+  }
+  
+  .ouk-titre h3{
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+  }
+  .ouk-titre p{
+    color: var(--colorPag);
+    text-align: center;
+    font-size: 1.8rem;
+  }
+  .ouk-absolute{
+    width: 30rem;
+    padding: .8rem;
+    background-color: var(--colorPag);
+    position: absolute;
+    top: 38rem;
+    left: 10rem;
+    color: black;
+    font-weight: bold;
+  }
+  .Ouk-offre{
+    width: 100%;
+    display: flex;
+    margin-top: 70px;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
