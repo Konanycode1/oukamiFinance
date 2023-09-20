@@ -6,7 +6,6 @@
   max-width: 1140px;
   /* max-height: auto; */
   margin: 0 auto;
-  padding: 2rem;
   background-color: black;
   height: 100vh; 
   /* text-align: center; */
@@ -35,7 +34,8 @@ p,a, h3{
 .menu{
   width: 30rem;
   height: 5rem;
-  background-color: #888;
+  
+  box-shadow: 2px 2px 2px 2px gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +56,13 @@ li a{
 }
 li:hover{
   background-color: var(--colorPag);
+}
+.active{
+  background-color: var(--colorPag);
+  color: var(--colorTow);
+}
+.active a{
+  color: var(--colorTow);
 }
 .tel{
   width: 10rem;
@@ -396,6 +403,177 @@ left: 20px;
 .iconRejoi{
   font-size: 3rem;
   color: white;
+}
+.oukMessage{
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.logogif{
+  width: 100%;
+  height: 10rem;
+}
+.cardMessa{
+  width: 15rem;
+  height: 16rem;
+  background-color: white;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  
+  
+}
+.cardMessa h6, .cardMessa p{
+  color: var(--colorTow);
+}
+.cardPatient{
+  width: 40rem;
+  height: 16rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+
+}
+.logoPatien{
+  width: 16rem;
+  height: 100%;
+}
+.cardPatient h6, .cardPatient p{
+  color: var(--colorTow);
+}
+.testemo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.testCard{
+  width: 70%;
+  height: 20rem;
+  background-color: var(--colorPag);
+  position: relative;
+}
+.quoteTesteMo{
+  width: 70px;
+  height: 70px;
+  background-color: var(--colorTow);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -30px;
+  left: 20px;
+}
+.icoTeste{
+  font-size: 2rem;
+}
+.cardPeople{
+  width: 15rem;
+  background-color: white;
+  padding: .8rem;
+  margin-top: 20px;
+}
+.blocTestemo{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.userP{
+  width: 100%;
+}
+.cardPeople{
+  text-align: center;
+}
+.cardPeople p{
+  color: var(--colorTow);
+}
+.infoPeople{
+  line-height: .8rem;
+}
+.infoPeople h6, .infoPeople p{
+  color: var(--colorTow);
+}
+.btnBloc{
+  display: flex;
+  justify-content: space-around;
+}
+.btnSous{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.btnInves{
+  width: 20rem;
+  height: 2rem;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background-color: var(--colorPag);
+}
+.contact{
+  width: 100%;
+  margin-bottom: 20px;
+}
+.contact h2{
+  color: var(--colorPag);
+}
+.contactBloc{
+  width: 100%;
+}
+.contaForm{
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.imputFields{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.imputFields input {
+  width: 15rem;
+  height: 2rem;
+  border: none;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.contaForm p {
+  text-align: center;
+}
+.contaFor button{
+  text-align: center;
+}
+footer{
+  width: 100%;
+  height: 40px;
+  background-color: var(--colorPag);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foot{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.socio{
+  width: 2rem;
+  height: 2rem;
 }
 @media screen and (min-width:1300px){
   .ouk-absolute{

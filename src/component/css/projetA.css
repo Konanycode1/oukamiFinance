@@ -1,0 +1,91 @@
+.BlocProjet{
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+}
+.retour{
+    width: 7rem;
+    height: 2rem;
+    background-color: var(--colorPag);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--colorTow);
+    border-radius: 20px;
+}
+.blocInfoAjout{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.b1{
+   margin: 0 auto;
+    color: var(--colorPag);
+    width: 50%;
+    margin-bottom: 50px;
+}
+.inputFieldPr{
+    width: 100%;
+}
+.inputFieldPr input{
+    width: 15rem;
+    height: 2.5rem;
+    border-radius: 5px;
+   border: none;
+   margin-bottom: 20px;
+}
+.disp{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+}
+.formProj{
+    width: 40rem;
+    margin: 0 auto;
+}
+.btnFournir{
+    width: 10rem;
+    height: 2rem;
+    border: none;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background-color: var(--colorPag);
+}
+.infoImpt{
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+
+}
+.fot{
+    text-align: center;
+    margin-top: 50px;
+    color: var(--colorPag);
+}
+
+@media screen and (max-width:850px) {
+    .disp{
+        display: block;
+        
+        
+    }
+    .formProj{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .b1{
+        margin: 0 auto;
+         color: var(--colorPag);
+         width: 100%;
+         margin-bottom: 50px;
+     }
+
+     .infoImpt{
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+    
+    }
+}
