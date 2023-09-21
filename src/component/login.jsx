@@ -13,6 +13,9 @@ function Login() {
     const RediretAcc = () => {
         navigate('/')
     }
+    const RediretProfil = () => {
+        navigate('/profil')
+    }
     return (
         <>
         <div className="login">
@@ -25,7 +28,7 @@ function Login() {
                         <a href="#" onClick={redirectCre}>Créer un compte ?</a>
                         <a href="#" onClick={redirectPass}>Mot de passe oublié?</a>
                     </div>
-                    <button className='btnSign' type='button'>Connexion</button>
+                    <button className='btnSign' onClick={RediretProfil} type='button'>Connexion</button>
                 </form>
             </div>
         </div>

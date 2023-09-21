@@ -29,7 +29,7 @@ function Sign() {
                         <a href="#" onClick={redirect}>Se connecter ?</a>
                         <a href="#" onClick={redirectPass}>Mot de passe oublié?</a>
                     </div>
-                    <button className='btnSign' type='button'>Valider</button>
+                    <button className='btnSign' onClick={redirect} type='button'>Valider</button>
                 </form>
             </div>
         </div>

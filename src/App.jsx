@@ -7,11 +7,17 @@ import Login from './component/login'
 import Forgot from './component/forgot'
 import AjoutProjet from './component/AjoutProjet'
 import VoirFinance from './component/voirFinance'
+import ProfilBailleur from './component/ProfilBailleur'
+import ListeProjet from './component/ListeProjet'
+import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { useRef } from 'react'
 function App() {
+  let client = useRef(new QueryClient()) ;
 
   return (
     <>
-    <Routes>
+<QueryClientProvider client={client.current}>
+  <Routes>
         <Route path='/' element={<Accueil/>} />
         <Route path='/navbar' element={<NavBar/>} />
         <Route path='/login' element={<Login/>} />
@@ -19,7 +25,11 @@ function App() {
         <Route path='/forgot' element={<Forgot/>} />
         <Route path='/ajout' element={<AjoutProjet/>} />
         <Route path='/Voir' element={<VoirFinance/>} />
+        <Route path='/profil' element={<ProfilBailleur />} />
+        <Route path='/liste' element={<ListeProjet />} />
     </Routes>
+</QueryClientProvider>
+   
     
     </>
   )

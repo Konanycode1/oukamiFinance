@@ -1,0 +1,226 @@
+.container{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+}
+.userBloc{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+   padding-top: 20px;
+}
+.ident{
+    line-height: .4rem;
+    text-align: center;
+}
+.ident p{
+    color: var( --colorTow);
+}
+.btnIden{
+    width: 8rem;
+    height: 2rem;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+#enlin{
+    background-color: var(--colorPag);
+}
+.menuProfil{
+    width: 70%;
+    margin: 0 auto;
+
+}
+.menuProfil ul{
+    display: flex;
+    justify-content: space-around;
+}
+.menuProfil ul li a{
+    color: var(--colorTow);
+}
+
+.fosProfil{
+    width: 100%;
+    display: flex;
+    
+}
+.desiProfil{
+    width: 50%;
+    margin-bottom: 50px;
+}
+.biProfil{
+    width: 50%;
+}
+.cardProfil{
+    width: 35rem;
+    height: auto;
+    border: 2px dashed var(--colorTow);
+    text-align: center;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.bailPic{
+    width: 100px;
+    height: 100px;
+    color: var(--colorTow);
+    background-color: var(--colorPag);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 100%;
+    margin: 0 auto;
+   
+
+}
+.cardProfil .icoPro{
+    color: var(--colorTow);
+    width: 5rem;
+    height: 2rem;
+    border: 1px solid gray;
+    border-radius: 20px;
+    position: absolute;
+    top: 15px;
+    right: 4px;
+}
+.verr{
+    margin-top: 30px;
+}
+.fields {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.fields p{
+    width: 70%;
+    color: var(--colorTow);
+    
+}
+.fields h6{
+   width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+}
+.projetFinance{
+    width: 35rem;
+    height: auto;
+    border: 1px solid rgba(128, 128, 128, 0.319);
+}
+.projFin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.projFin img{
+    width: 4rem;
+    height: 4rem;
+}
+.pr1{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.425);
+    border-bottom: 2px solid rgba(159, 159, 159, 0.414);
+}
+.infoSurProj{
+    line-height: 1rem;
+}
+.infoSurProj p{
+    color: var(--colorTow);
+
+}
+.bicard{
+    width: 90%;
+    height: auto;
+    border:1px solid rgba(128, 128, 128, 0.357) ;
+    margin: 0 auto;
+}
+.titleBi{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.425);
+    border-bottom: 2px solid rgba(159, 159, 159, 0.414);
+
+}
+.projBin{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+.rondBibib{
+    /* width:50px;
+    height:50px; */
+    /* border: 1px dashed var(--colorPag); */
+    /* border-radius: 100%;
+    */
+    margin-right: 10px; 
+    font-size: 2rem;
+    color: var(--colorTow);
+}
+.rondBibibF{
+    /* width:50px;
+    height:50px; */
+    /* border: 1px dashed var(--colorPag); */
+    /* border-radius: 100%;
+    */
+    margin-right: 10px; 
+    font-size: 2rem;
+    color: var(--colorPag);
+}
+.actives{
+   border-bottom: 1px solid var(--colorTow);
+}
+.generaListe{
+    width: 100%;
+}
+.listeProjetEn{
+    width: 100%;
+    height: 4rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.424);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.378);
+}
+.listeProjetContent{
+    width: 100%;
+
+}
+.listenPro{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.encoProj{
+   width: 30%;
+    color: rgb(25, 220, 25);
+}
+.ajF{
+    color: red;
+}
+.listenPro h5{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.listenPro .icoPojetFi{
+    width: 10%;
+}
