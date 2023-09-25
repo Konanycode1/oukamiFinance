@@ -28,18 +28,36 @@
 #enlin{
     background-color: var(--colorPag);
 }
+
+.mobilIcon{
+    color: black;
+}
 .menuProfil{
     width: 70%;
     margin: 0 auto;
+
+}
+.menuScreen{
+    width: 100%;
+    margin: 0 auto;
+    display: none;
 
 }
 .menuProfil ul{
     display: flex;
     justify-content: space-around;
 }
+.menuScreen ul{
+    display: flex;
+    justify-content: space-around;
+}
 .menuProfil ul li a{
     color: var(--colorTow);
 }
+.menuScreen ul li a{
+    color: var(--colorTow);
+}
+
 
 .fosProfil{
     width: 100%;
@@ -223,4 +241,46 @@
 }
 .listenPro .icoPojetFi{
     width: 10%;
+}
+
+@media screen  and (max-width:1000px){
+    .fosProfil {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .desiProfil {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .cardProfil {
+        width: 100%;
+        height: auto;
+        border: 2px dashed var(--colorTow);
+        text-align: center;
+        position: relative;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    .projetFinance {
+        width: 100%;
+        height: auto;
+        border: 1px solid rgba(128, 128, 128, 0.319);
+    }
+    .biProfil {
+        width: 100%;
+    }
+
+    .menuProfil{
+        width: 70%;
+        margin: 0 auto;
+        display: none;
+    
+    }
+    .menuScreen{
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    
+    }
 }

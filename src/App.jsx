@@ -10,6 +10,8 @@ import VoirFinance from './component/voirFinance'
 import ProfilBailleur from './component/ProfilBailleur'
 import ListeProjet from './component/ListeProjet'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
+import { ToastContainer } from 'react-toastify';
+// import reactQueryDevTools from "@tanstack/react-query/"
 import { useRef } from 'react'
 function App() {
   let client = useRef(new QueryClient()) ;
@@ -17,6 +19,17 @@ function App() {
   return (
     <>
 <QueryClientProvider client={client.current}>
+<ToastContainer  
+  position="top-center"
+  autoClose={5000}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="light" />
   <Routes>
         <Route path='/' element={<Accueil/>} />
         <Route path='/navbar' element={<NavBar/>} />

@@ -1,8 +1,8 @@
 import './css/profil.css'
 import wassa from '../assets/wassa.png';
 import QuickBank from '../assets/logo.png';
-import { BsWrenchAdjustableCircleFill } from "react-icons/bs";
-import { BiSolidEdit,BiCalendar,BiMoney } from "react-icons/bi";
+import { BsWrenchAdjustableCircleFill, BsCardChecklist,BsClockHistory,BsFillGearFill } from "react-icons/bs";
+import { BiSolidEdit,BiCalendar,BiMoney,BiUserCheck } from "react-icons/bi";
 import Footer from './footer';
 import {useLocation, useNavigate } from 'react-router-dom';
 
@@ -19,6 +19,7 @@ function ProfilBailleur() {
     return(
         <>
             <div className="container">
+               
                 <div className="userBloc">
                     <div className="ident">
                         <h5>Abraham konan</h5>
@@ -28,6 +29,14 @@ function ProfilBailleur() {
                         <button type="button" id='enlin' className='btnIden'>En ligne</button>
                         <button type="button" onClick={redirectHome} className='btnIden'>Action</button>
                     </div>
+                </div>
+                 <div className="menuScreen">
+                    <ul>
+                        <li className={splitpath[1] === "profil" ? "actives" : ""}><a href="/profil"><BiUserCheck className='mobilIcon' /></a></li>
+                        <li className={splitpath[1] === "liste" ? "actives" : ""}><a href="liste"><BsCardChecklist className='mobilIcon'/></a></li>
+                        <li className={splitpath[1] === "histo" ? "actives" : ""}><a href=""><BsClockHistory className='mobilIcon'/></a></li>
+                        <li className={splitpath[1] === "param" ? "actives" : ""}><a href=""><BsFillGearFill className='mobilIcon'/></a></li>
+                    </ul>
                 </div>
                 <div className="menuProfil">
                     <ul>

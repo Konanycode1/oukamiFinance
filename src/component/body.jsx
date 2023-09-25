@@ -40,10 +40,11 @@ function Body(){
                         <h6 className="agence">Votre agent chargé de vous trouver des financement pour vos projet innovateur.</h6>
                     </div>
                     <img className='sti' src={stati} alt="image Oukami"  />
-                </div>
-                <p className="ouk-absolute">
+                    <p className="ouk-absolute">
                     Avez-vous des projet innovant et enregistrer à votre nom ? <br /> N’hésiter pas à ajouter vos projet et bénéficier d’une actionnaire et ou un financement.
-                </p>
+                    </p>
+                </div>
+               
                 <button className='btnComm' type='button'>Commencez</button>
 
                 <div className="Ouk-offre">

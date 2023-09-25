@@ -1,6 +1,15 @@
+import { useForm } from 'react-hook-form'
 import './css/login.css'
 import logo from '/logo.jpg'
 import { useNavigate } from 'react-router-dom'
+import  {toast}  from 'react-toastify'
+import { useMutation } from '@tanstack/react-query'
+import axios from 'axios';
+// import { urlApi } from "../conso/url";
+
+
+
+const urlApi = "http://localhost:3000/api/"
 function Login() {
     let navigate = useNavigate();
 
@@ -16,19 +25,45 @@ function Login() {
     const RediretProfil = () => {
         navigate('/profil')
     }
+
+    const login = async (values)=>{
+        let response = await axios.post(`${urlApi}log`,values)
+        return response
+    }
+    const {register, handleSubmit} = useForm({
+        email:'',
+        password:''
+    });
+
+    const {mutate:loginUser} = useMutation(
+        {
+            mutationFn: (Mydata)=>login(Mydata),
+            onSuccess: (succes)=>{
+                console.log(succes)
+                navigate('/profil')
+            },
+            onError:(error)=>{
+                console.log(error)
+            }
+        }
+    )
+
+    const onSubmit = (data)=>loginUser(data)
+
+
     return (
         <>
         <div className="login">
             <div className="blocLogin">
                 <img src={logo} onClick={RediretAcc} className='logo' alt="" />
-                <form action="" className='formLogin'>
-                    <p className='inputFields'><input type="text" placeholder='Email' /></p>
-                    <p className='inputFields'><input type="text" placeholder='Mot de passe ' /></p>
+                <form action="" className='formLogin' onSubmit={handleSubmit(onSubmit)}>
+                    <p className='inputFields'><input type="text"  {...register("email", {required: "svp votre  Email", pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "svp entrer un mail valide"}})} placeholder='Email' /></p>
+                    <p className='inputFields'><input type="password" {...register("password", {required:true})} placeholder='Mot de passe ' /></p>
                     <div className="linkT">
                         <a href="#" onClick={redirectCre}>Créer un compte ?</a>
                         <a href="#" onClick={redirectPass}>Mot de passe oublié?</a>
                     </div>
-                    <button className='btnSign' onClick={RediretProfil} type='button'>Connexion</button>
+                    <button className='btnSign' type='submit'>Connexion</button>
                 </form>
             </div>
         </div>

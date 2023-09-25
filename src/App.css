@@ -9,6 +9,7 @@
   background-color: black;
   height: 100vh; 
   /* text-align: center; */
+  position: relative;
 }
 *{
   padding: 0;
@@ -16,11 +17,17 @@
   box-sizing: border-box;
   /* box-shadow: 0 0 3px rgb(233, 107, 107); */
 }
+/* Styles pour les toasts */
+
 
 p,a, h3{
   color: white;
 }
-
+.messaBull{
+  position: absolute;
+  top: 20rem;
+  left: 24rem;
+}
 .logo {
   width:5rem;
   height: 5em;
@@ -30,6 +37,10 @@ p,a, h3{
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.navBarScreen{
+  display: none;
+
 }
 .menu{
   width: 30rem;
@@ -41,9 +52,24 @@ p,a, h3{
   align-items: center;
   
 }
-li{
+.menuMobil {
+  width: 30rem;
+  height: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.menu li{
   list-style: none;
   width: 15rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.menuMobil li{
+  list-style: none;
+  width: 8rem;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -87,6 +113,8 @@ li:hover{
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+
 }
 .agence{
   width: 25rem;
@@ -113,7 +141,7 @@ li:hover{
   padding: .8rem;
   background-color: var(--colorPag);
   position: absolute;
-  top: 25rem;
+  top: 26rem;
   left: 20rem;
   color: black;
   font-weight: bold;
@@ -581,7 +609,7 @@ footer{
     padding: .8rem;
     background-color: var(--colorPag);
     position: absolute;
-    top: 42rem;
+    top: 26rem;
     left: 20rem;
     color: black;
     font-weight: bold;
@@ -599,6 +627,18 @@ footer{
     /* text-align: center; */
 
   }
+  .navBar{
+    display: none;
+  }
+  .navBarScreen{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+  }
+
+
   .sti{
     width: 20rem;
     height: 20rem;
@@ -606,7 +646,7 @@ footer{
   .sliced{
     width: 100%;
     height: 80vh;
-    display: block;
+    display: flex;
     text-align: center;
   }
   
@@ -617,12 +657,15 @@ footer{
   }
   .agence{
     width: 100%;
-    font-size:3.5rem;
+    font-size:2.5rem;
   }
   .ouk-titre{
     width: 100%;
     line-height: .2rem;
     
+  }
+  .cardPatient{
+    margin-bottom: 20px;
   }
   
   .ouk-titre h3{
@@ -640,8 +683,8 @@ footer{
     padding: .8rem;
     background-color: var(--colorPag);
     position: absolute;
-    top: 38rem;
-    left: 10rem;
+    top: 25rem;
+    left: 15rem;
     color: black;
     font-weight: bold;
   }
@@ -653,4 +696,163 @@ footer{
     align-items: center;
     flex-direction: column-reverse;
   }
+  .oukOffre2 {
+    width: 100%;
+    text-align: center;
+}
+  .oukOffre1 {
+    width: 100%;
+    text-align: center;
+}
+
+  .oukOffre1 h3 {
+    color: white;
+    width: 50%;
+    display: inline-block;
+}
+.oukCardGroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+}
+@media screen and (max-width:780px){
+  .sliced {
+    width: 100%;
+    height: 90vh;
+    display: block;
+    text-align: center;
+}
+.sti {
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 20px;
+}
+.btnComm {
+  width: 10rem;
+  height: 2.5rem;
+  float: none;
+ display: flex;
+ flex-direction: column;
+  margin-top: 120px;
+  border: none;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  background-color: var(--colorPag);
+}
+.cardPatient{
+  margin-bottom: 20px;
+}
+  .ouk-absolute{
+    width: 30rem;
+    padding: .8rem;
+    background-color: var(--colorPag);
+    position: initial;
+  
+    color: black;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+
+  .navBar{
+    display: none;
+  }
+  .navBarScreen{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+  }
+
+  .menuMobil {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  .rea {
+    width: 100%;
+    height: auto;
+    /* background-color: aliceblue; */
+    text-align: center;
+}
+  .contentrea {
+    display: block;
+    align-items: center;
+  }
+    .picture1 {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+  }
+  .textRea{
+    margin-bottom: 20px;
+  }
+  .projetFinanc h2 {
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width:610px){
+  .btnComm {
+ visibility: hidden;
+}
+.comment {
+  width: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+  .oukCom1{
+    margin-bottom: 20px;
+  }
+  .avantage1 {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+.avantage2 {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  flex-direction: column;
+  background-color: #8888888b;
+}
+.btnBloc {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column-reverse;
+  align-items: center;
+
+}
+.btnInves {
+  margin-bottom: 20px;
+}
+.cardPatient{
+  margin-bottom: 20px;
+}
+.contact h2 {
+text-align: center;
+}
+.imputFields {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
 }

@@ -12,6 +12,20 @@
    text-align: center;
    padding: 2rem;
 }
+/* .blocSign{
+    width: 50%;
+    height: auto;
+    border: .3rem dashed var(--colorPag);
+   text-align: center;
+   padding: .1rem;
+} */
+.blocSign{
+    width: 70%;
+    height: 100%;
+    border: .3rem dashed var(--colorPag);
+   text-align: center;
+   padding: 2rem;
+}
 .logo{
     width: 10rem;
     height: 10rem;
@@ -20,9 +34,20 @@
 .formLogin{
     width: 100%;
     padding: 2rem;
+    display: inline-block;
+}
+.formSign{
+    width: 100%;
+    display: inline-block;
 }
 .inputFields{
     width: 100%;
+}
+.inputFieldsSign{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .inputFields input{
     width: 15rem;
@@ -30,6 +55,16 @@
     border-radius: 5px;
    border: none;
    margin-bottom: 20px;
+}
+.inputFieldsSign input{
+    width: 10rem;
+    height: 2.5rem;
+    border-radius: 5px;
+   border: none;
+   margin-bottom: 10px;
+}
+.inputFieldsSign input::placeholder{
+    text-align: center;
 }
 .inputFields input::placeholder{
     text-align: center;
@@ -53,4 +88,49 @@
 .linkT a{
     text-decoration: none;
     color: var(--colorPag);
+}
+.errorMes{
+    color: red;
+}
+.posiAbsolute{
+    position: absolute;
+    top: 20rem;
+    left: 26rem;
+}
+.posiAbsolute p{
+    color: var(--colorPag);
+}
+@media screen and (max-width:1000px ) {
+    .blocSign{
+        width: 100%;
+        height: auto;
+        border: .3rem dashed var(--colorPag);
+       text-align: center;
+    }
+    .formSign{
+        width: 100%;
+        padding: .8rem;
+        display: inline-block;
+    }
+    .inputFieldsSign{
+        width: 100%;
+        display:flex;
+    }
+}
+@media screen and (max-width:800px) {
+    .blocSign{
+        width: 100%;
+        height: auto;
+        border: .3rem dashed var(--colorPag);
+       text-align: center;
+    }
+    .formSign{
+        width: 100%;
+        padding: .8rem;
+        display: inline-block;
+    }
+    .inputFieldsSign{
+        width: 100%;
+        display:flex;
+    }
 }
