@@ -11,6 +11,7 @@ import ProfilBailleur from './component/ProfilBailleur'
 import ListeProjet from './component/ListeProjet'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query'
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import reactQueryDevTools from "@tanstack/react-query/"
 import { useRef } from 'react'
 function App() {

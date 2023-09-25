@@ -5,11 +5,11 @@ import { useNavigate } from 'react-router-dom'
 import  {toast}  from 'react-toastify'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios';
+import Cookies from 'js-cookie'
+
 // import { urlApi } from "../conso/url";
-
-
-
 const urlApi = "http://localhost:3000/api/"
+
 function Login() {
     let navigate = useNavigate();
 
@@ -39,11 +39,17 @@ function Login() {
         {
             mutationFn: (Mydata)=>login(Mydata),
             onSuccess: (succes)=>{
-                console.log(succes)
-                navigate('/profil')
+                toast.success(succes.data.message)
+                Cookies.set('token', succes.data.token,{ expires: 3600*24, path: '' })
+                setTimeout(()=>{
+                    navigate('/profil')
+                },3000)
+               
+               
             },
-            onError:(error)=>{
-                console.log(error)
+            onError:(e)=>{
+                console.log(e.response.data.message)
+                toast.error(e.response.data.message)
             }
         }
     )

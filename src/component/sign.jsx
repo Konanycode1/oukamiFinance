@@ -14,9 +14,8 @@ const urlApi = "http://localhost:3000/api/"
 
 function Sign() {
     let navigate = useNavigate();
-    let{ errorMessage,setErrorMessage} = useState(null)
-    const redirect = ()=>{
-        navigate("/login")
+    let[errorMessage,setErrorMessage] = useState(null)
+    const redirect = ()=>{ 
     }
     const redirectPass = ()=>{
         navigate("/forgot")
@@ -43,18 +42,21 @@ function Sign() {
             return response;
         },
         onError: (errors)=>{
-            setErrorMessage(errors.response)
-        //  console.log(errors.response) 
+            // setErrorMessage(errors.response)
+         console.log(errors) 
         },
         onSuccess: (success)=>{
           console.log( success)
-          navigate('/login')
+        //   navigate('/login')
+            setErrorMessage(success.data)
         }
     })
     let onSubmit = data=> bailleur(data);
     if(isLoading){
         return (<div className='posiAbsolute'><p>Chargement encours....</p></div>)
     }
+
+    console.log(errorMessage)
     return (
         <>
         <div className="login">
@@ -102,7 +104,7 @@ function Sign() {
                     </div>
                     <button className='btnSign'  type='submit'>Valider</button>
                     {/* <p className='errorMes'>{errorMessage?.message }</p> */}
-                    <p style={{color:'red'}}>{errorMessage?.data.message}</p>
+                    {/* <p style={{color:'red'}}>{errorMessage?.data.message}</p> */}
                 </form>
 
             </div>

@@ -4,8 +4,12 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 // import ajoutProjet from "../conso/ajoutProjet.js";
 import { useMutation } from "@tanstack/react-query";
+import {toast} from "react-toastify";
+import axios from "axios";
 // import { useState } from "react";
-// import { url } from "../conso/url";
+// import { urlApi } from "../conso/url";
+
+
 
 const urlApi = "http://localhost:3000/api/"
 
@@ -38,18 +42,18 @@ function AjoutProjet() {
             for (const key in Mydata){
                 formData.set(key, Mydata[key])
             }
-            const response =  await fetch(`${urlApi}ajout`, {
-                method: 'POST',
-                body:formData,
-              });
-              return response.json()
+            const response =  await axios.post(`${urlApi}ajout`, formData,);
+            return response
+        },
+        onSuccess: (suce)=>{
+            console.log(suce)
+            toast.success(suce.data.message)
         },
         onError: (errors)=>{
+            toast.error(errors.data)
             console.log(errors)
-        },
-        onSuccess: ()=>{
-            console.log("ok")
         }
+        
     })
     
     const onSubmit = data => ajoutProjet(data);
@@ -63,49 +67,49 @@ function AjoutProjet() {
                     <div className="inputFieldPr disp">
                         <p>
                             <label htmlFor="nom">Nom</label> <br />
-                            <input type="text" {...register("nom")} />
+                            <input type="text" {...register("nom",{required:true})} />
                             {errors.nom && <span>This field is required</span>}
                         </p>
                         <p>
                             <label htmlFor="prenom">Prénom</label> <br />
-                            <input type="text"  {...register("prenom")} />
+                            <input type="text"  {...register("prenom",{required:true})} />
                         </p>
                     </div>
                     <div className="inputFieldPr disp">
                         <p>
                             <label htmlFor="numero">Numéro</label> <br />
-                            <input type="text"  {...register("numero")} /> 
+                            <input type="text"  {...register("numero",{required:true})} /> 
                         </p>
                         <p>
                             <label htmlFor="email">Email</label><br />
-                            <input type="email"  {...register("email")} />
+                            <input type="email"  {...register("email",{required:true, pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "svp entrer un mail valide"}})} />
                             {errors.email && <span>This field is required</span>}
                         </p>
                     </div>
                     <div className="inputFieldPr disp">
                         <p>
                             <label htmlFor="nomProjet">Nom du projet</label>  <br />
-                            <input type="text"  {...register("nomProjet")} />
+                            <input type="text"  {...register("nomProjet",{required:true})} />
                          </p>
                         <p>
                             <label htmlFor="description">Description du projet</label> <br />
-                            <input type="text"  {...register("description")} /> 
+                            <input type="text"  {...register("description",{required:true})} /> 
                         </p>
                     </div>
                     <div className="inputFieldPr disp">
                         <p>
                             <label htmlFor="budget">Budget</label> <br />
-                            <input type="text"  {...register("budget")}/>
+                            <input type="text"  {...register("budget",{required:true})}/>
                         </p>
                         <p>
                             <label htmlFor="">Durée du projet</label> <br />
-                            <input type="text"  {...register("durerProjet")} />
+                            <input type="text"  {...register("durerProjet",{required:true})} />
                         </p>
                     </div>
                     <div className="inputFieldPr disp">
                         <p>
                             <label htmlFor="numeroTeleDecla">Numéro télédeclarant</label> <br />
-                            <input type="text"  {...register("numeroTeleDecla")} /> 
+                            <input type="text"  {...register("numeroTeleDecla",{required:true})} /> 
                         </p>
                         <p>
                             <label htmlFor="image">Un logo du projet </label> <br />

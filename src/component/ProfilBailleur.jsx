@@ -5,9 +5,25 @@ import { BsWrenchAdjustableCircleFill, BsCardChecklist,BsClockHistory,BsFillGear
 import { BiSolidEdit,BiCalendar,BiMoney,BiUserCheck } from "react-icons/bi";
 import Footer from './footer';
 import {useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
+import axios from 'axios';
+// import urlApi from '../conso/url.js';
+const urlApi = "http://localhost:3000/api/"
+import { useQuery } from '@tanstack/react-query';
+
+
 
 Footer
 function ProfilBailleur() {
+    const [token, setToken] = useState(null)
+    const [result, setResult] = useState({})
+    let sebdToken = Cookies.get("token")
+   
+    // console.log(token)
+    useEffect(()=>{
+        setToken(sebdToken)
+    })
     let location = useLocation();
     let {pathname} = location;
     const splitpath = pathname.split("/")
@@ -16,13 +32,32 @@ function ProfilBailleur() {
     const redirectHome = ()=>{
         navigate("/")
     }
+    console.log(token)
+const fetchUser = async()=>{
+    const headers = { 'authorization': `token ${token}`};
+    let response = axios.get(`${urlApi}getBailleur`,{
+       headers
+    })
+    return response
+}
+
+const {data, isSuccess, isError} = useQuery(
+{
+    queryKey: ['user'],
+    queryFn: fetchUser
+})
+
+console.log(data)
+
+
+
     return(
         <>
             <div className="container">
                
                 <div className="userBloc">
                     <div className="ident">
-                        <h5>Abraham konan</h5>
+                        <h5></h5>
                         <p>Bailleur</p>
                     </div>
                     <div className="idenBtn">
