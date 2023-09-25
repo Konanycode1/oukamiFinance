@@ -36,7 +36,7 @@ function ProfilBailleur() {
 const fetchUser = async()=>{
     const headers = { 'authorization': `token ${token}`};
     let response = axios.get(`${urlApi}getBailleur`,{
-       headers
+        headers
     })
     return response
 }
