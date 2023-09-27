@@ -36,7 +36,7 @@
     border-radius: 10px;
 }
 .carVoir img{
-    width: 12rem;
+    width: 10rem;
     height: 100%;
     border-radius: 5px;
     
@@ -57,6 +57,7 @@
 }
 .infoProj{
     padding: 1rem;
+    height: 100%;
 }
 .infoProj h5{
     color: var(--colorTow);
@@ -80,6 +81,16 @@
     justify-content: center;
     align-items: center;
 }
+.btnfinC{
+    width: 6.6rem;
+    height: 2rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: var(--colorTow);
+    color: white;
+}
 .falseStatus{
     width: 6.6rem;
     height: 2rem;
@@ -89,4 +100,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+ 
+@media screen and (max-width:700px) {
+    
 }

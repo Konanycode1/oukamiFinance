@@ -14,6 +14,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import reactQueryDevTools from "@tanstack/react-query/"
 import { useRef } from 'react'
+import ListeFinance from './conso/listeFinance'
 function App() {
   let client = useRef(new QueryClient()) ;
 
@@ -41,6 +42,7 @@ function App() {
         <Route path='/Voir' element={<VoirFinance/>} />
         <Route path='/profil' element={<ProfilBailleur />} />
         <Route path='/liste' element={<ListeProjet />} />
+        <Route path='/finace' element={<ListeFinance />} />
     </Routes>
 </QueryClientProvider>
    

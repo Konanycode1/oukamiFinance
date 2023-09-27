@@ -17,52 +17,58 @@ import { useQuery } from '@tanstack/react-query';
 Footer
 function ProfilBailleur() {
     const [token, setToken] = useState(null)
-    const [result, setResult] = useState({})
-    let sebdToken = Cookies.get("token")
+    // const [result, setResult] = useState({})
+    
    
-    // console.log(token)
-    useEffect(()=>{
-        setToken(sebdToken)
-    })
     let location = useLocation();
     let {pathname} = location;
     const splitpath = pathname.split("/")
 
     let navigate = useNavigate();
     const redirectHome = ()=>{
-        navigate("/")
+        navigate("/Voir")
     }
-    console.log(token)
+    let session = sessionStorage.getItem("user")
+    session = JSON.parse(session)
+    if(!session){
+        navigate('/login')
+    }
+ 
 const fetchUser = async()=>{
-    const headers = { 'authorization': `token ${token}`};
-    let response = axios.get(`${urlApi}getBailleur`,{
-        headers
+    let sendToken = Cookies.get("token")
+    setToken(sendToken)
+    // const headers = { 'Authorization': `token ${token}`};
+    let response = await axios.get(`${urlApi}getBailleur`,{
+        headers: {
+            'Authorization':  `token ${sendToken}`
+        }
     })
     return response
 }
 
+
 const {data, isSuccess, isError} = useQuery(
 {
     queryKey: ['user'],
-    queryFn: fetchUser
+    queryFn: fetchUser,
+     
 })
-
-console.log(data)
-
-
-
+if(token == null){
+    navigate("/login")
+}
     return(
         <>
+            {/* {console.log(data)} */}
             <div className="container">
                
                 <div className="userBloc">
                     <div className="ident">
-                        <h5></h5>
-                        <p>Bailleur</p>
+                        <h5>{data?.data.message.nom} {data?.data.message.prenom}</h5>
+                        <p>{data?.data.message.societe}</p>
                     </div>
                     <div className="idenBtn">
                         <button type="button" id='enlin' className='btnIden'>En ligne</button>
-                        <button type="button" onClick={redirectHome} className='btnIden'>Action</button>
+                        <button type="button" onClick={redirectHome} className='btnIden'>Voir</button>
                     </div>
                 </div>
                  <div className="menuScreen">
@@ -90,32 +96,32 @@ console.log(data)
                             <div className="infoUser">
                                 <div className="fields verr">
                                     <h6>Nom Prénom</h6>
-                                    <p>ABraham konan</p>
+                                    <p>{data?.data.message.nom} {data?.data.message.prenom}</p>
                                 </div>
                                 <hr />
                                 <div className="fields">
                                     <h6>Numero</h6>
-                                    <p>+225 0141822918</p>
+                                    <p>+225 {data?.data.message.numero}</p>
                                 </div>
                                 <hr />
                                 <div className="fields">
                                     <h6>Email</h6>
-                                    <p>abrahamkonan@gmail.com</p>
+                                    <p>{data?.data.message.email}</p>
                                 </div>
                                 <hr />
                                 <div className="fields">
                                     <h6>Société</h6>
-                                    <p>particulier</p>
+                                    <p>{data?.data.message.societe}</p>
                                 </div>
                                 <hr />
                                 <div className="fields">
                                     <h6>Fonction</h6>
-                                    <p>Développeur</p>
+                                    <p>{data?.data.message.fonction}</p>
                                 </div>
                                 <hr />
                                 <div className="fields">
                                     <h6>Pays,Ville</h6>
-                                    <p>Côte d&apos;ivoire, Abidjan</p>
+                                    <p>{data?.data.message.ville},{data?.data.message.pays}</p>
                                 </div>
                                 <hr />
                             </div>

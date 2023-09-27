@@ -22,6 +22,7 @@ function AjoutProjet() {
     const back = ()=>{
         navigate("/")
     }
+ 
     const {register,setValue,handleSubmit, formState: { errors } } = useForm({
         defaultValues:{
             nom:'',
@@ -48,6 +49,9 @@ function AjoutProjet() {
         onSuccess: (suce)=>{
             console.log(suce)
             toast.success(suce.data.message)
+            setTimeout(()=>{
+               navigate('/voir')
+            },3050)
         },
         onError: (errors)=>{
             toast.error(errors.data)
@@ -83,7 +87,7 @@ function AjoutProjet() {
                         <p>
                             <label htmlFor="email">Email</label><br />
                             <input type="email"  {...register("email",{required:true, pattern: {value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i, message: "svp entrer un mail valide"}})} />
-                            {errors.email && <span>This field is required</span>}
+                            {errors.email && <span >This field is required</span>}
                         </p>
                     </div>
                     <div className="inputFieldPr disp">

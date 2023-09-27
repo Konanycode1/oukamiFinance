@@ -43,6 +43,7 @@ function Login() {
                 Cookies.set('token', succes.data.token,{ expires: 3600*24, path: '' })
                 setTimeout(()=>{
                     navigate('/profil')
+                     sessionStorage.setItem("user", JSON.stringify({user:"Bailleur",status:true}))
                 },3000)
                
                
