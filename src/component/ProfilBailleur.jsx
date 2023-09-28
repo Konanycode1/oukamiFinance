@@ -8,8 +8,8 @@ import {useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-// import urlApi from '../conso/url.js';
-const urlApi = "http://localhost:3000/api/"
+import urlApi from '../conso/url.js';
+// const urlApi = "http://localhost:3000/api/"
 import { useQuery } from '@tanstack/react-query';
 
 
@@ -74,16 +74,16 @@ if(token == null){
                  <div className="menuScreen">
                     <ul>
                         <li className={splitpath[1] === "profil" ? "actives" : ""}><a href="/profil"><BiUserCheck className='mobilIcon' /></a></li>
-                        <li className={splitpath[1] === "liste" ? "actives" : ""}><a href="liste"><BsCardChecklist className='mobilIcon'/></a></li>
-                        <li className={splitpath[1] === "histo" ? "actives" : ""}><a href=""><BsClockHistory className='mobilIcon'/></a></li>
+                        <li className={splitpath[1] === "liste" ? "actives" : ""}><a href="/liste"><BsCardChecklist className='mobilIcon'/></a></li>
+                        <li className={splitpath[1] === "hsitorique" ? "actives" : ""}><a href="/historique"><BsClockHistory className='mobilIcon'/></a></li>
                         <li className={splitpath[1] === "param" ? "actives" : ""}><a href=""><BsFillGearFill className='mobilIcon'/></a></li>
                     </ul>
                 </div>
                 <div className="menuProfil">
                     <ul>
                     <li className={splitpath[1] === "profil" ? "actives" : ""}><a href="/profil">Profile</a></li>
-                        <li className={splitpath[1] === "liste" ? "actives" : ""}><a href="liste">Liste De Projet Valider</a></li>
-                        <li className={splitpath[1] === "histo" ? "actives" : ""}><a href="">Historique</a></li>
+                        <li className={splitpath[1] === "liste" ? "actives" : ""}><a href="/liste">Liste De Projet Valider</a></li>
+                        <li className={splitpath[1] === "hsitorique" ? "actives" : ""}><a href="/historique">Historique</a></li>
                         <li className={splitpath[1] === "param" ? "actives" : ""}><a href="">Parametre</a></li>
                     </ul>
                 </div>

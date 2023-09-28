@@ -7,8 +7,8 @@ import { useMutation } from '@tanstack/react-query'
 import axios from 'axios';
 import Cookies from 'js-cookie'
 
-// import { urlApi } from "../conso/url";
-const urlApi = "http://localhost:3000/api/"
+import urlApi  from "../conso/url.js";
+// const urlApi = "http://localhost:3000/api/"
 
 function Login() {
     let navigate = useNavigate();

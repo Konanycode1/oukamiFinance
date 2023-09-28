@@ -1,9 +1,10 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
-// const urlApi = "http://localhost:3000/api/"
-import {BiNetworkChart } from "react-icons/bi";
 import urlApi from './url.js';
-function ListeFinance(){
+// const urlApi = "http://localhost:3000/api/"
+
+
+function HistoFinace() {
     let keyUser = JSON.parse( sessionStorage.getItem('keyUser'))
     console.log( "key: ",keyUser)
     
@@ -19,23 +20,14 @@ function ListeFinance(){
                     }
                 })
              console.log(data)
+    return (
+        <>
+        <h6>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde aspernatur sint culpa velit ipsa? Repellat magnam ad illum veniam!
+             Dolorem aliquam animi ex quod doloribus eum libero deleniti obcaecati nihil.
+        </h6>
+        </>
+    )
     
-        
-  return (
-    <>
-        {
-        data?.data.message.map((item)=>{
-            return(
-                <div className="listenPro">
-                    <BiNetworkChart className="icoPojetFi"/>
-                    <h5>{item.nomProjet}</h5>
-                    <p className='encoProj'>encours de financement</p>
-                </div>
-            )
-        })
-        }
-    </>
-  )
-
 }
-export default ListeFinance
+export default HistoFinace

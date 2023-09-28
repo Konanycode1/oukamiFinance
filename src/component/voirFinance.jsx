@@ -12,8 +12,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import toast from 'react-hot-toast';
-const urlApi = "http://localhost:3000/api/"
-// import urlApi from '../conso/url.js';
+// const urlApi = "http://localhost:3000/api/"
+import urlApi from '../conso/url.js';
 
 function VoirFinance() {
     let [result, setResult] = useState()
@@ -79,6 +79,7 @@ function VoirFinance() {
                 {
                     
                     data?.data.message.map((item)=>{
+                        if(item.statut !== "true"){
                         return (
                         <div className="carVoir" key={item._id}>
                             <img src={item.image}  alt=""  />
@@ -89,11 +90,12 @@ function VoirFinance() {
                                 <div className="bVoir1">
                                     <p>Date: <span>{item.date.split('T')[0]}</span></p>
                                     <button style={session ? {display:"flex"}: {display:"none"}} onClick={valideFinance} className='btnfinC' keys={item._id} type="button">financer</button>
-                                    <button className='staus' style={item.statut == 'false'?{backgroundColor:"red"}:{backgroundColor:"green"}} disabled>{item.budget}</button>
+                                    <button className='staus' style={item.statut == 'false'?{backgroundColor:"red"}:{backgroundColor:"green"}} disabled>{item.budget} Fr</button>
                                 </div>
                             </div>
                         </div>
                         )
+                    }
                     })
                 }
                 {/* <div className="carVoir">

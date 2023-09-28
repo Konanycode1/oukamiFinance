@@ -11,12 +11,13 @@ import axios from 'axios';
 import Footer from './footer';
 import { useQuery } from '@tanstack/react-query';
 import ListeFinance from '../conso/listeFinance';
+import HistoFinace from '../conso/histofinance';
 // const urlApi = "http://localhost:3000/api/"
 import urlApi from '../conso/url.js';
 
 
   
-function ListeProjet() {
+function Historique() {
     const [token, setToken] = useState(null)
     const [resultFinance, setResultFinance] = useState()
     let navigate = useNavigate()
@@ -95,10 +96,10 @@ function ListeProjet() {
                 <div className="fosProfil">
                     <div className="generaListe">
                         <div className="listeProjetEn">
-                            <h6>Liste de vos projet encours et financés</h6>
+                            <h6>Historique des actions effectuées</h6>
                         </div>
                         <div className="listeProjetContent">
-                            <ListeFinance />
+                            <HistoFinace />
                         </div>
                     </div>
                    
@@ -109,4 +110,4 @@ function ListeProjet() {
         </>
     )
 }
-export default  ListeProjet
+export default  Historique

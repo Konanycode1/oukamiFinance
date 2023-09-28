@@ -6,15 +6,15 @@ import { useMutation } from '@tanstack/react-query'
 import  axios  from 'axios'
 import { useState } from 'react'
 import Message from './Message'
+import {toast} from 'react-hot-toast'
+import urlApi  from "../conso/url.js";
 
-// import { urlApi } from "../conso/url";
-
-const urlApi = "http://localhost:3000/api/"
+// const urlApi = "http://localhost:3000/api/"
 
 
 function Sign() {
     let navigate = useNavigate();
-    let[errorMessage,setErrorMessage] = useState(null)
+    // let[errorMessage,setErrorMessage] = useState(null)
     const redirect = ()=>{ 
     }
     const redirectPass = ()=>{
@@ -41,28 +41,31 @@ function Sign() {
             let response = await axios.post(`${urlApi}bailleur`,send);
             return response;
         },
+        onSuccess: (success)=>{
+            toast.success(success.data.message)
+            setTimeout(()=>{
+                navigate('/login')
+            },3050)
+                // setErrorMessage(success.data)
+            },
         onError: (errors)=>{
             // setErrorMessage(errors.response)
-         console.log(errors) 
-        },
-        onSuccess: (success)=>{
-          console.log( success)
-        //   navigate('/login')
-            setErrorMessage(success.data)
+        //  console.log(errors) 
+        toast.error(errors.response)
         }
+      
     })
     let onSubmit = data=> bailleur(data);
-    if(isLoading){
-        return (<div className='posiAbsolute'><p>Chargement encours....</p></div>)
-    }
+    // if(isLoading){
+    //    toast.success("chargement encours ....")
+    // }
 
-    console.log(errorMessage)
     return (
         <>
         <div className="login">
-            {isSuccess && (
+            {/* {isSuccess && (
                 <Message reset={reset} body={"Enregistrement effectuée "}></Message>
-            )}
+            )} */}
            
             <div className="blocSign">
                 <img src={logo} onClick={RediretAcc} className='logo' alt="" />
