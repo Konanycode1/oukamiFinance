@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import toast from 'react-hot-toast';
 // const urlApi = "http://localhost:3000/api/"
-import urlApi from '../conso/url.js';
+import {urlApi} from '../conso/url.js';
 
 function VoirFinance() {
     let [result, setResult] = useState()

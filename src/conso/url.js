@@ -1,1 +1,1 @@
-export const urlApi = "https://oukamifinance.onrender.com/api/";
+export  const urlApi = "https://oukamifinance.onrender.com/api/"

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
-import urlApi from './url.js';
+import {urlApi} from './url.js';
 // const urlApi = "http://localhost:3000/api/"
 
 

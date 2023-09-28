@@ -7,7 +7,7 @@ import  axios  from 'axios'
 import { useState } from 'react'
 import Message from './Message'
 import {toast} from 'react-hot-toast'
-import urlApi  from "../conso/url.js";
+import {urlApi}  from "../conso/url.js";
 
 // const urlApi = "http://localhost:3000/api/"
 

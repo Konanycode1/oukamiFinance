@@ -13,7 +13,7 @@ import { useQuery } from '@tanstack/react-query';
 import ListeFinance from '../conso/listeFinance';
 import HistoFinace from '../conso/histofinance';
 // const urlApi = "http://localhost:3000/api/"
-import urlApi from '../conso/url.js';
+import {urlApi} from '../conso/url.js';
 
 
   

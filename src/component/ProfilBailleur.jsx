@@ -8,7 +8,7 @@ import {useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import axios from 'axios';
-import urlApi from '../conso/url.js';
+import {urlApi} from '../conso/url.js';
 // const urlApi = "http://localhost:3000/api/"
 import { useQuery } from '@tanstack/react-query';
 
