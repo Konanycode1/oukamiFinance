@@ -16,6 +16,7 @@ function Sign() {
     let navigate = useNavigate();
     // let[errorMessage,setErrorMessage] = useState(null)
     const redirect = ()=>{ 
+        navigate("/login")
     }
     const redirectPass = ()=>{
         navigate("/forgot")
@@ -23,7 +24,7 @@ function Sign() {
     const RediretAcc = () => {
         navigate('/')
     }
-    const {register, handleSubmit, watch ,formState:{errors}, getValues} = useForm({
+    const {register, handleSubmit, watch ,formState:{errors}} = useForm({
         nom:'',
         prenom:'',
         email:'',
@@ -34,7 +35,7 @@ function Sign() {
         pays:'',
         password:''
     })
-    const {mutate:bailleur, isLoading,isSuccess,isError, reset} = useMutation({
+    const {mutate:bailleur} = useMutation({
         mutationFn: async (send)=>{
             console.log(send)
 

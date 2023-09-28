@@ -25,8 +25,22 @@
     border-radius: 20px;
     margin-right: 10px;
 }
+.descrFinan{
+    color:black;
+}
 #enlin{
     background-color: var(--colorPag);
+}
+.histoBloc{
+    display:flex;
+    align-items:center;
+    justify-content:space-around;
+    border: .2rem dashed var(--colorTow);
+}
+.lintDes{
+    width:15rem;
+    height:5rem;
+    
 }
 
 .mobilIcon{

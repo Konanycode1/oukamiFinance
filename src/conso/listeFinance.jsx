@@ -14,7 +14,7 @@ function ListeFinance(){
                     queryFn: async ()=>{
                        console.log('ok')
                        
-                        const response = await axios.get(`${urlApi}/projetFinance/${keyUser}`)
+                        const response = await axios.get(`${urlApi}projetFinance/${keyUser}`)
                         return response
                     }
                 })
@@ -26,6 +26,7 @@ function ListeFinance(){
         {
         data?.data.message.map((item)=>{
             return(
+                // eslint-disable-next-line react/jsx-key
                 <div className="listenPro">
                     <BiNetworkChart className="icoPojetFi"/>
                     <h5>{item.nomProjet}</h5>

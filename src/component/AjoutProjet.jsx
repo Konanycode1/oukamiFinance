@@ -38,6 +38,7 @@ function AjoutProjet() {
     });
     const {mutate:ajoutProjet} = useMutation({
         mutationFn: async (Mydata)=>{
+            console.log(Mydata)
             const formData = new FormData()
 
             for (const key in Mydata){

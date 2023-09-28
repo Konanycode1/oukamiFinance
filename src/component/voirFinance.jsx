@@ -17,7 +17,7 @@ import {urlApi} from '../conso/url.js';
 
 function VoirFinance() {
     let [result, setResult] = useState()
-
+    let navigate = useNavigate();
     let session = sessionStorage.getItem('user')
     session = JSON.parse(session)
     // console.log(session)
@@ -42,7 +42,7 @@ function VoirFinance() {
       .then((data)=>{
         toast.success("Votre demande est encours d'analyse")
         setTimeout(()=>{
-            window.location.reload();
+            navigate('/profil')
         },3050)
       })
       .catch((e)=>{

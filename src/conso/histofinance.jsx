@@ -1,6 +1,9 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
+import {  BsClockHistory } from "react-icons/bs";
+import'../component/css/profil.css'
 import {urlApi} from './url.js';
+
 // const urlApi = "http://localhost:3000/api/"
 
 
@@ -22,10 +25,19 @@ function HistoFinace() {
              console.log(data)
     return (
         <>
-        <h6>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde aspernatur sint culpa velit ipsa? Repellat magnam ad illum veniam!
-             Dolorem aliquam animi ex quod doloribus eum libero deleniti obcaecati nihil.
-        </h6>
+        {
+            data?.data.message.map((ele)=>{
+                return(
+                    // eslint-disable-next-line react/jsx-key
+                    <div className="histoBloc">
+                    <BsClockHistory />
+                    <p className="descrFinan lintDes">{ele.description}</p>
+                    <p className="descrFinan">{ele.nomProjet}</p>
+               </div>
+                )
+            })
+        }
+      
         </>
     )
     

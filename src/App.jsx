@@ -16,7 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useRef } from 'react'
 import ListeFinance from './conso/listeFinance'
 import Historique from './component/historique'
-
+import HistoFinace from './conso/histofinance'
 function App() {
   let client = useRef(new QueryClient()) ;
 
@@ -46,6 +46,7 @@ function App() {
         <Route path='/liste' element={<ListeProjet />} />
         <Route path='/finace' element={<ListeFinance />} />
         <Route path='/historique' element={<Historique/>} />
+        <Route path='/histoFinace' element={<HistoFinace/>} />
     </Routes>
 </QueryClientProvider>
    
