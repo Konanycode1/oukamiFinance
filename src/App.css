@@ -616,6 +616,19 @@ footer{
   }
 
 }
+@media screen and (max-width:1200px){
+  .ouk-absolute{
+    width: 30rem;
+    padding: .8rem;
+    background-color: var(--colorPag);
+    position: absolute;
+    top: 35rem;
+    left: 20rem;
+    color: black;
+    font-weight: bold;
+  }
+
+}
 @media screen and (max-width:1000px){
   #root {
     width:100%;
