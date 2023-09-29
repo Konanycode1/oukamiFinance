@@ -27,7 +27,7 @@ function ListeFinance(){
         data?.data.message.map((item)=>{
             return(
                 // eslint-disable-next-line react/jsx-key
-                <div className="listenPro">
+                <div className="listenPro" key={item._id}>
                     <BiNetworkChart className="icoPojetFi"/>
                     <h5>{item.nomProjet}</h5>
                     <p className='encoProj'>encours de financement</p>

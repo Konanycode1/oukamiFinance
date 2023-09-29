@@ -96,7 +96,7 @@ function Body(){
                     <div className="avantage2">
                         
                         <div className="textAvant1">
-                            <h3>Avantage pour être actionnaire</h3>
+                            <h3>Avantage pour être Porteur de projet</h3>
                             <p>Vos projets sont financer à 100% par nos bailleur et la possibilité d’avoir une actionnaire pour un projet innovant.</p>
                             <p>70% des parts revient au porteur de projet respectant toutes les formalités</p>
                             <p>Toutes les conditions respectées et disposant d’un projet innovant bénéficiera des financements de son projet.</p>

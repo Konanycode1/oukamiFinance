@@ -20,6 +20,7 @@ function VoirFinance() {
     let navigate = useNavigate();
     let session = sessionStorage.getItem('user')
     session = JSON.parse(session)
+
     // console.log(session)
     // if(session){
     //     setTimeout(()=>{
@@ -29,6 +30,9 @@ function VoirFinance() {
     //     },50)
        
     // }
+ 
+ 
+   
     function valideFinance(event) {
         let cookie = Cookies.get("token")
       const idProjet = event.target.getAttribute("keys");
