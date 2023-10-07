@@ -30,6 +30,20 @@ function VoirFinance() {
     //     },50)
        
     // }
+    const listTodo = async ()=>{
+        const response = await axios.get(`${urlApi}projetAll`)
+        return response
+    }
+
+    const {data, isSuccess} = useQuery({
+        queryKey:['liste'],
+        queryFn: listTodo,
+    })
+    if(isSuccess){
+        // console.log(data)
+    }
+    // console.log(result)
+  
  
  
    
@@ -56,20 +70,7 @@ function VoirFinance() {
     }
    
    
-    const listTodo = async ()=>{
-        const response = await axios.get(`${urlApi}projetAll`)
-        return response
-    }
 
-    const {data, isSuccess} = useQuery({
-        queryKey:['liste'],
-        queryFn: listTodo,
-    })
-    if(isSuccess){
-        // console.log(data)
-    }
-    // console.log(result)
-  
 
     return(
         <>
